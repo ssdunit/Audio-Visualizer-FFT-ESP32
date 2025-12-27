@@ -79,7 +79,7 @@ void loop()
     matrix[7 - col] = colMask; // orientation fix
   }
 
-  // ===== DISPLAY (YOUR WORKING DRIVER) =====
+  // ===== DISPLAY =====
   for(int i = 0; i < 8; i++){
     for(int row = 0; row < 8; row++){
       digitalWrite(Cathodes[7-row], LOW);
