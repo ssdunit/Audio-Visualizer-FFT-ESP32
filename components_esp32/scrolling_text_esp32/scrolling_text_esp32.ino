@@ -150,7 +150,7 @@ void setup()
   for(int i=0;i<8;i++){
     matrix[i] = 0;
   }
-  updatetext("Hello67",st,&length);
+  updatetext("H",st,&length);
 }
 
 void loop()

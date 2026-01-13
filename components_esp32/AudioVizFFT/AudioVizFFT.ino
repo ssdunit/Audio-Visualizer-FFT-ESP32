@@ -33,8 +33,8 @@ void setup()
   pinMode(srclk, OUTPUT);
 
   for(int i=0;i<8;i++){
-    pinMode(Cathodes[7-i], OUTPUT);
-    digitalWrite(Cathodes[7-i], LOW);
+    pinMode(Cathodes[i], OUTPUT);
+    digitalWrite(Cathodes[i], LOW);
   }
 }
 
@@ -82,14 +82,14 @@ void loop()
   // ===== DISPLAY =====
   for(int i = 0; i < 8; i++){
     for(int row = 0; row < 8; row++){
-      digitalWrite(Cathodes[7-row], LOW);
+      digitalWrite(Cathodes[row], LOW);
     }
 
     digitalWrite(regclk, LOW);
     shiftOut(data, srclk, LSBFIRST, ~matrix[i]); // ACTIVE LOW columns
     digitalWrite(regclk, HIGH);
 
-    digitalWrite(Cathodes[7-i], HIGH);
+    digitalWrite(Cathodes[i], HIGH);
     delayMicroseconds(1500);
   }
 }
